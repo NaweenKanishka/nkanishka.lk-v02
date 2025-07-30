@@ -1,22 +1,28 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+  scroll-behavior: smooth;
 }
-.main-container{
-    max-width: 1400px;
-    height: 400px;
-    margin: auto;
-    background-color: lightgray;
+.hero {
+  height: 100vh;
+  background-image: url('../assets/grpnew.gif');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1030;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  
-}
-.header-container{
-    max-width: 1400px;
-  margin: auto;
-}
+.project-card {
+      max-width: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .project-card img {
+      height: 150px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .project-card .card-body {
+      padding: 15px;
+    }
+    .modal-content {
+      border-radius: 12px;
+    }
