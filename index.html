@@ -8,6 +8,8 @@
     <title>Professional Website</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link href="css/main.css" rel="stylesheet" />
 </head>
 
@@ -46,33 +48,39 @@
             <h2 class="text-center mb-5 fw-bold">Services</h2>
             <div class="row g-4 justify-content-center">
 
+                <!-- Card 1 -->
                 <div class="col-md-4">
-                    <div class="card border-0 shadow-sm h-100 text-center p-4 service-card">
+                    <div class="card h-100 text-center p-4 shadow-sm border-0" data-bs-toggle="modal"
+                        data-bs-target="#webModal">
                         <div class="mb-3 text-primary">
-                            <i class="fas fa-code fa-4x"></i>
+                            <i class="fas fa-code fa-3x"></i>
                         </div>
-                        <h5 class="fw-semibold mb-3">Web Development</h5>
-                        <p class="text-muted">Clean, responsive, and fast websites using modern tools.</p>
+                        <h5 class="fw-semibold mb-2">Web Development</h5>
+                        <p class="text-muted">Clean, responsive, and fast websites.</p>
                     </div>
                 </div>
 
+                <!-- Card 2 -->
                 <div class="col-md-4">
-                    <div class="card border-0 shadow-sm h-100 text-center p-4 service-card">
+                    <div class="card h-100 text-center p-4 shadow-sm border-0" data-bs-toggle="modal"
+                        data-bs-target="#designModal">
                         <div class="mb-3 text-success">
-                            <i class="fas fa-paint-brush fa-4x"></i>
+                            <i class="fas fa-paint-brush fa-3x"></i>
                         </div>
-                        <h5 class="fw-semibold mb-3">UI/UX Design</h5>
-                        <p class="text-muted">User-centered designs for optimal digital experiences.</p>
+                        <h5 class="fw-semibold mb-2">UI/UX Design</h5>
+                        <p class="text-muted">User-centered designs for great experience.</p>
                     </div>
                 </div>
 
+                <!-- Card 3 -->
                 <div class="col-md-4">
-                    <div class="card border-0 shadow-sm h-100 text-center p-4 service-card">
+                    <div class="card h-100 text-center p-4 shadow-sm border-0" data-bs-toggle="modal"
+                        data-bs-target="#mobileModal">
                         <div class="mb-3 text-danger">
-                            <i class="fas fa-mobile-alt fa-4x"></i>
+                            <i class="fas fa-mobile-alt fa-3x"></i>
                         </div>
-                        <h5 class="fw-semibold mb-3">Mobile Responsive</h5>
-                        <p class="text-muted">Fully optimized layouts for all screen sizes.</p>
+                        <h5 class="fw-semibold mb-2">Mobile Responsive</h5>
+                        <p class="text-muted">Optimized layouts for all screen sizes.</p>
                     </div>
                 </div>
 
@@ -80,211 +88,193 @@
         </div>
     </section>
 
+    <!-- Modals -->
+    <!-- Web Dev Modal -->
+    <div class="modal fade" id="webModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Web Development</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body small">
+                    I build responsive, secure, and SEO-friendly websites using HTML, CSS, JavaScript, PHP, and MySQL.
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Portfolio -->
-    <section id="portfolio" class="py-5 bg-light">
+    <!-- Design Modal -->
+    <div class="modal fade" id="designModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">UI/UX Design</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body small">
+                    I create clean, intuitive designs focused on usability and engagement.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Modal -->
+    <div class="modal fade" id="mobileModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mobile Responsive</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body small">
+                    Every design is built to look perfect on any device — phone, tablet, or desktop.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- project start -->
+    <!-- project card 01 -->
+    <section id="projects" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Portfolio</h2>
-            <div class="projects">
-                <!-- CARD 1 -->
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="card project-card">
-                        <img src="assets/grpnew.gif" alt="Project 1">
-                        <div class="card-body">
-                            <h6 class="fw-bold mb-1">V03 - Sales System</h6>
-                            <p class="mb-2 small text-muted">Complete sales management solution with invoice & delivery
+            <h2 class="text-center mb-5 fw-bold">Projects</h2>
+            <div class="row g-4 justify-content-center">
+
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100 project-card" data-bs-toggle="modal"
+                        data-bs-target="#projectModal1">
+                        <img src="assets/grpnew.gif" class="card-img-top" alt="V03 Sales System">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-semibold">V03 Sales System</h5>
+                            <p class="card-text text-muted small">Your complete sales & invoice solution with real-time
                                 tracking.</p>
-                            <button class="btn btn-sm btn-primary w-100" data-bs-toggle="modal"
-                                data-bs-target="#modal1">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100 project-card" data-bs-toggle="modal"
+                        data-bs-target="#projectModal1">
+                        <img src="assets/grpnew.gif" class="card-img-top" alt="V03 Sales System">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-semibold">V03 Sales System</h5>
+                            <p class="card-text text-muted small">Your complete sales & invoice solution with real-time
+                                tracking.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- MODAL 1 -->
-                <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
-                    <div class="modal-dialog modal-md modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h6 class="modal-title" id="modalLabel1">V03 Sales Management System</h6>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body small">
-                                <p>Modern sales solution for small businesses.</p>
+                <!-- More cards here (copy & update modal IDs) -->
 
-                                <button class="btn btn-sm btn-outline-primary mb-2" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#features1">🔍 Features</button>
-                                <div class="collapse mb-2" id="features1">
-                                    <ul class="ps-3">
-                                        <li>Real-Time Sales Tracking</li>
-                                        <li>Invoice Management</li>
-                                        <li>Delivery Updates</li>
-                                        <li>User Roles</li>
-                                    </ul>
-                                </div>
+            </div>
+        </div>
+    </section>
 
-                                <button class="btn btn-sm btn-outline-secondary mb-2" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#tech1">🛠 Tech Stack</button>
-                                <div class="collapse" id="tech1">
-                                    <p>HTML, CSS, JS, PHP, MySQL</p>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#" class="btn btn-sm btn-success">Live Demo</a>
-                                <button class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
+    <!-- Modal for Card 1 -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 rounded-4 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="projectModal1Label">V03 — Sales Management Solution 💼📊</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Simplify and streamline your business operations with V03 – a powerful all-in-one sales system.
+                    </p>
+                    <ul class="small">
+                        <li>✅ Real-Time Sales Tracking</li>
+                        <li>✅ Invoice Generation & Smart Search</li>
+                        <li>✅ Sales Reports & Delivery Status</li>
+                        <li>✅ Role-Based Access Control</li>
+                    </ul>
+                    <p><strong>Tech Stack:</strong> HTML5, CSS, JavaScript, PHP, MySQL</p>
+                    <a href="#" class="btn btn-primary btn-sm mt-2" target="_blank">🔗 Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Card 1 -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 rounded-4 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="projectModal1Label">V03 — Sales Management Solution 💼📊</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Simplify and streamline your business operations with V03 – a powerful all-in-one sales system.
+                    </p>
+                    <ul class="small">
+                        <li>✅ Real-Time Sales Tracking</li>
+                        <li>✅ Invoice Generation & Smart Search</li>
+                        <li>✅ Sales Reports & Delivery Status</li>
+                        <li>✅ Role-Based Access Control</li>
+                    </ul>
+                    <p><strong>Tech Stack:</strong> HTML5, CSS, JavaScript, PHP, MySQL</p>
+                    <a href="#" class="btn btn-primary btn-sm mt-2" target="_blank">🔗 Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- project card 01 -->
+    <!-- project end -->
+    <!-- about me start -->
+    <section id="about" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">About Me</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    I'm an IT student and graphic designer passionate about merging technology and creativity. I
+                    specialize in web development, UI/UX design, and delivering user-centric digital solutions.
+                </p>
+            </div>
+
+            <div class="text-center mb-5">
+                <h3 class="fw-bold">My Journey</h3>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content shadow-sm p-4 bg-light rounded-3">
+                        <h5 class="fw-semibold">2022 - Present</h5>
+                        <p class="text-muted mb-1">BIT (Bachelor of IT) at University of Moratuwa</p>
+                        <span class="badge bg-primary">Education</span>
                     </div>
                 </div>
 
-                <!-- CARD 2 -->
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="card project-card">
-                        <img src="assets/grpnew.gif" alt="Project 2">
-                        <div class="card-body">
-                            <h6 class="fw-bold mb-1">V03 - Sales System</h6>
-                            <p class="mb-2 small text-muted">All-in-one dashboard with smart search and reporting.</p>
-                            <button class="btn btn-sm btn-primary w-100" data-bs-toggle="modal"
-                                data-bs-target="#modal2">View Details</button>
-                        </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content shadow-sm p-4 bg-light rounded-3">
+                        <h5 class="fw-semibold">2021 - Present</h5>
+                        <p class="text-muted mb-1">Freelance Graphic Designer — UI/UX, Branding, Ads</p>
+                        <span class="badge bg-success">Design Career</span>
                     </div>
                 </div>
 
-                <!-- MODAL 2 -->
-                <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
-                    <div class="modal-dialog modal-md modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h6 class="modal-title" id="modalLabel2">V03 Sales Management System</h6>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body small">
-                                <p>Manage, analyze, and grow your business from one place.</p>
-
-                                <button class="btn btn-sm btn-outline-primary mb-2" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#features2">🔍 Features</button>
-                                <div class="collapse mb-2" id="features2">
-                                    <ul class="ps-3">
-                                        <li>Smart Search & Print</li>
-                                        <li>Real-Time Data</li>
-                                        <li>Reports & Graphs</li>
-                                        <li>Permissions Control</li>
-                                    </ul>
-                                </div>
-
-                                <button class="btn btn-sm btn-outline-secondary mb-2" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#tech2">🛠 Tech Stack</button>
-                                <div class="collapse" id="tech2">
-                                    <p>Bootstrap 5, JS, PHP, MySQL</p>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#" class="btn btn-sm btn-success">Live Demo</a>
-                                <button class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content shadow-sm p-4 bg-light rounded-3">
+                        <h5 class="fw-semibold">2023</h5>
+                        <p class="text-muted mb-1">Built first full-stack PHP project (Sales System with Dashboard)</p>
+                        <span class="badge bg-info text-dark">Development</span>
                     </div>
                 </div>
 
-                <!-- CARD 3 -->
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="card project-card">
-                        <img src="assets/grpnew.gif" alt="Project 2">
-                        <div class="card-body">
-                            <h6 class="fw-bold mb-1">V03 - Sales System</h6>
-                            <p class="mb-2 small text-muted">All-in-one dashboard with smart search and reporting.</p>
-                            <button class="btn btn-sm btn-primary w-100" data-bs-toggle="modal"
-                                data-bs-target="#modal2">View Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MODAL 3 -->
-                <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
-                    <div class="modal-dialog modal-md modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h6 class="modal-title" id="modalLabel2">V03 Sales Management System</h6>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body small">
-                                <p>Manage, analyze, and grow your business from one place.</p>
-
-                                <button class="btn btn-sm btn-outline-primary mb-2" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#features2">🔍 Features</button>
-                                <div class="collapse mb-2" id="features2">
-                                    <ul class="ps-3">
-                                        <li>Smart Search & Print</li>
-                                        <li>Real-Time Data</li>
-                                        <li>Reports & Graphs</li>
-                                        <li>Permissions Control</li>
-                                    </ul>
-                                </div>
-
-                                <button class="btn btn-sm btn-outline-secondary mb-2" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#tech2">🛠 Tech Stack</button>
-                                <div class="collapse" id="tech2">
-                                    <p>Bootstrap 5, JS, PHP, MySQL</p>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#" class="btn btn-sm btn-success">Live Demo</a>
-                                <button class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- CARD 4 -->
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="card project-card">
-                        <img src="assets/grpnew.gif" alt="Project 2">
-                        <div class="card-body">
-                            <h6 class="fw-bold mb-1">V03 - Sales System</h6>
-                            <p class="mb-2 small text-muted">All-in-one dashboard with smart search and reporting.</p>
-                            <button class="btn btn-sm btn-primary w-100" data-bs-toggle="modal"
-                                data-bs-target="#modal2">View Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MODAL 4 -->
-                <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
-                    <div class="modal-dialog modal-md modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h6 class="modal-title" id="modalLabel2">V03 Sales Management System</h6>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body small">
-                                <p>Manage, analyze, and grow your business from one place.</p>
-
-                                <button class="btn btn-sm btn-outline-primary mb-2" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#features2">🔍 Features</button>
-                                <div class="collapse mb-2" id="features2">
-                                    <ul class="ps-3">
-                                        <li>Smart Search & Print</li>
-                                        <li>Real-Time Data</li>
-                                        <li>Reports & Graphs</li>
-                                        <li>Permissions Control</li>
-                                    </ul>
-                                </div>
-
-                                <button class="btn btn-sm btn-outline-secondary mb-2" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#tech2">🛠 Tech Stack</button>
-                                <div class="collapse" id="tech2">
-                                    <p>Bootstrap 5, JS, PHP, MySQL</p>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#" class="btn btn-sm btn-success">Live Demo</a>
-                                <button class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content shadow-sm p-4 bg-light rounded-3">
+                        <h5 class="fw-semibold">2024</h5>
+                        <p class="text-muted mb-1">Started web-based projects with AWS, MySQL, Laravel</p>
+                        <span class="badge bg-dark">Projects</span>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
+
+    <!-- about me end -->
+
 
     <!-- Contact -->
     <section id="contact" class="py-5">
@@ -313,6 +303,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
