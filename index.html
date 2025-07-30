@@ -85,70 +85,204 @@
     <section id="portfolio" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-4">Portfolio</h2>
-            <div class="row g-4">
-                <!--first card start-->
-                <div class="container d-flex justify-content-center">
+            <div class="projects">
+                <!-- CARD 1 -->
+                <div class="col-md-4 d-flex justify-content-center">
                     <div class="card project-card">
-                        <img src="assets/grpnew.gif" alt="Project Image">
+                        <img src="assets/grpnew.gif" alt="Project 1">
                         <div class="card-body">
                             <h6 class="fw-bold mb-1">V03 - Sales System</h6>
                             <p class="mb-2 small text-muted">Complete sales management solution with invoice & delivery
                                 tracking.</p>
                             <button class="btn btn-sm btn-primary w-100" data-bs-toggle="modal"
-                                data-bs-target="#projectModal">View Details</button>
+                                data-bs-target="#modal1">View Details</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Modal -->
-                <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel"
-                    aria-hidden="true">
+                <!-- MODAL 1 -->
+                <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
                     <div class="modal-dialog modal-md modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h6 class="modal-title" id="projectModalLabel">V03 Sales Management System</h6>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <h6 class="modal-title" id="modalLabel1">V03 Sales Management System</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
                             <div class="modal-body small">
-                                <p class="mb-2">V03 is an efficient and modern sales management solution built for small
-                                    to medium businesses.</p>
+                                <p>Modern sales solution for small businesses.</p>
 
                                 <button class="btn btn-sm btn-outline-primary mb-2" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#featuresCollapse">
-                                    🔍 Key Features
-                                </button>
-                                <div class="collapse mb-2" id="featuresCollapse">
-                                    <ul class="ps-3 mb-2">
+                                    data-bs-toggle="collapse" data-bs-target="#features1">🔍 Features</button>
+                                <div class="collapse mb-2" id="features1">
+                                    <ul class="ps-3">
                                         <li>Real-Time Sales Tracking</li>
-                                        <li>Invoice Generation</li>
-                                        <li>Outstanding Payments & Refunds</li>
-                                        <li>Delivery Status Updates</li>
-                                        <li>User Role Permissions</li>
+                                        <li>Invoice Management</li>
+                                        <li>Delivery Updates</li>
+                                        <li>User Roles</li>
                                     </ul>
                                 </div>
 
                                 <button class="btn btn-sm btn-outline-secondary mb-2" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#techCollapse">
-                                    🛠️ Tech Stack
-                                </button>
-                                <div class="collapse" id="techCollapse">
-                                    <p class="mb-0">HTML, CSS, JavaScript, PHP, MySQL, Bootstrap</p>
+                                    data-bs-toggle="collapse" data-bs-target="#tech1">🛠 Tech Stack</button>
+                                <div class="collapse" id="tech1">
+                                    <p>HTML, CSS, JS, PHP, MySQL</p>
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <a href="#" class="btn btn-sm btn-success">Live Demo</a>
-                                <button type="button" class="btn btn-sm btn-secondary"
-                                    data-bs-dismiss="modal">Close</button>
+                                <button class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--first card end-->
 
+                <!-- CARD 2 -->
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="card project-card">
+                        <img src="assets/grpnew.gif" alt="Project 2">
+                        <div class="card-body">
+                            <h6 class="fw-bold mb-1">V03 - Sales System</h6>
+                            <p class="mb-2 small text-muted">All-in-one dashboard with smart search and reporting.</p>
+                            <button class="btn btn-sm btn-primary w-100" data-bs-toggle="modal"
+                                data-bs-target="#modal2">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- Repeat more cards -->
+                <!-- MODAL 2 -->
+                <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
+                    <div class="modal-dialog modal-md modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="modalLabel2">V03 Sales Management System</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body small">
+                                <p>Manage, analyze, and grow your business from one place.</p>
+
+                                <button class="btn btn-sm btn-outline-primary mb-2" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#features2">🔍 Features</button>
+                                <div class="collapse mb-2" id="features2">
+                                    <ul class="ps-3">
+                                        <li>Smart Search & Print</li>
+                                        <li>Real-Time Data</li>
+                                        <li>Reports & Graphs</li>
+                                        <li>Permissions Control</li>
+                                    </ul>
+                                </div>
+
+                                <button class="btn btn-sm btn-outline-secondary mb-2" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#tech2">🛠 Tech Stack</button>
+                                <div class="collapse" id="tech2">
+                                    <p>Bootstrap 5, JS, PHP, MySQL</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#" class="btn btn-sm btn-success">Live Demo</a>
+                                <button class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="card project-card">
+                        <img src="assets/grpnew.gif" alt="Project 2">
+                        <div class="card-body">
+                            <h6 class="fw-bold mb-1">V03 - Sales System</h6>
+                            <p class="mb-2 small text-muted">All-in-one dashboard with smart search and reporting.</p>
+                            <button class="btn btn-sm btn-primary w-100" data-bs-toggle="modal"
+                                data-bs-target="#modal2">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODAL 3 -->
+                <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
+                    <div class="modal-dialog modal-md modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="modalLabel2">V03 Sales Management System</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body small">
+                                <p>Manage, analyze, and grow your business from one place.</p>
+
+                                <button class="btn btn-sm btn-outline-primary mb-2" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#features2">🔍 Features</button>
+                                <div class="collapse mb-2" id="features2">
+                                    <ul class="ps-3">
+                                        <li>Smart Search & Print</li>
+                                        <li>Real-Time Data</li>
+                                        <li>Reports & Graphs</li>
+                                        <li>Permissions Control</li>
+                                    </ul>
+                                </div>
+
+                                <button class="btn btn-sm btn-outline-secondary mb-2" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#tech2">🛠 Tech Stack</button>
+                                <div class="collapse" id="tech2">
+                                    <p>Bootstrap 5, JS, PHP, MySQL</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#" class="btn btn-sm btn-success">Live Demo</a>
+                                <button class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 4 -->
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="card project-card">
+                        <img src="assets/grpnew.gif" alt="Project 2">
+                        <div class="card-body">
+                            <h6 class="fw-bold mb-1">V03 - Sales System</h6>
+                            <p class="mb-2 small text-muted">All-in-one dashboard with smart search and reporting.</p>
+                            <button class="btn btn-sm btn-primary w-100" data-bs-toggle="modal"
+                                data-bs-target="#modal2">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODAL 4 -->
+                <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
+                    <div class="modal-dialog modal-md modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="modalLabel2">V03 Sales Management System</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body small">
+                                <p>Manage, analyze, and grow your business from one place.</p>
+
+                                <button class="btn btn-sm btn-outline-primary mb-2" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#features2">🔍 Features</button>
+                                <div class="collapse mb-2" id="features2">
+                                    <ul class="ps-3">
+                                        <li>Smart Search & Print</li>
+                                        <li>Real-Time Data</li>
+                                        <li>Reports & Graphs</li>
+                                        <li>Permissions Control</li>
+                                    </ul>
+                                </div>
+
+                                <button class="btn btn-sm btn-outline-secondary mb-2" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#tech2">🛠 Tech Stack</button>
+                                <div class="collapse" id="tech2">
+                                    <p>Bootstrap 5, JS, PHP, MySQL</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#" class="btn btn-sm btn-success">Live Demo</a>
+                                <button class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
 
