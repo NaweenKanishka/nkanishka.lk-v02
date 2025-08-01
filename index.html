@@ -289,6 +289,25 @@
         .service-card:hover i {
             transform: scale(1.2);
         }
+
+        .draggable {
+            cursor: move;
+        }
+
+        .placeholder {
+            border: 2px dashed #007bff;
+            background-color: #f8f9fa;
+            min-height: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .edit-controls {
+            margin-bottom: 20px;
+        }
+
+        .opacity-50 {
+            opacity: 0.5;
+        }
     </style>
 </head>
 
@@ -360,6 +379,12 @@
                         </a>
                     </li>
                 </ul>
+                <div class="d-flex gap-2 mb-3 flex-wrap">
+                    <button id="toggleEditBtn" class="btn btn-outline-primary btn-sm">Enable Edit Mode</button>
+                    <button class="btn btn-danger btn-sm" onclick="resetLayout()">Reset Layout</button>
+                </div>
+
+
 
 
             </div>
@@ -367,11 +392,12 @@
 
 
 
-        <div class="right-side">
+        <div id="containerWrapper" class="right-side">
+
             <div class="content-block">
                 <nav class="navbar bg-body-tertiary">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="ve">
+                        <a class="navbar-brand" href="#">
                             <img src="assets/blacklogo.png" alt="Logo" width="30" height="24"
                                 class="d-inline-block align-text-top">
                             NKANISHKA.LK
@@ -401,192 +427,214 @@
 
 
 
+
             <!--projects start-->
+            <div class="card p-4 mb-4 border-0 shadow-none" draggable="false">
+                <h1 class="fw-bold mb-4 projectH1">
+                    <i class="bi bi-award-fill me-2 text-warning"></i>Latest Project Achievements
+                </h1>
 
-            <h1 class="fw-bold mb-4 projectH1">
-                <i class="bi bi-award-fill me-2 text-warning"></i>Latest Project Achievements
-            </h1>
+                <div class="content-block project-card">
+                    <img src="assets/salesV03Dashboard.png" alt="POS System" class="project-image">
+                    <div class="project-info">
+                        <h2>SmS V03</h2>
+                        <span class="badge rounded-pill text-bg-warning">Latest</span>
+                        <span class="badge rounded-pill text-bg-primary">demo</span>
+                        <span class="badge text-bg-success">Live demo is available</span>
 
-            <div class="content-block project-card">
-                <img src="assets/salesV03Dashboard.png" alt="POS System" class="project-image">
-                <div class="project-info">
-                    <h2>SmS V03</h2>
-                    <span class="badge rounded-pill text-bg-warning">Latest</span>
-                    <span class="badge rounded-pill text-bg-primary">demo</span>
-                    <span class="badge text-bg-success">Live demo is available</span>
-
-                    <p>🚀 Introducing SmS V03 – The Ultimate Sales Management System! 💼📊</p>
-                    <button class="view-more-btn" onclick="openModal('modal1')">View More</button>
+                        <p>🚀 Introducing SmS V03 – The Ultimate Sales Management System! 💼📊</p>
+                        <button class="view-more-btn" onclick="openModal('modal1')">View More</button>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Modal -->
-            <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal('modal1')">&times;</span>
-                    <h2>SmS V03 – Full Details</h2>
-                    <img src="assets/salesV03Dashboard.png" alt="POS Screenshot"
-                        style="max-width:100%; border-radius: 10px; margin-bottom: 15px;">
-                    <p>
-                        Say goodbye to manual tracking and messy spreadsheets. SmS V03 is here to revolutionize the way
-                        you manage your business operations — faster, smarter, and more efficiently!
+                <!-- Modal -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('modal1')">&times;</span>
+                        <h2>SmS V03 – Full Details</h2>
+                        <img src="assets/salesV03Dashboard.png" alt="POS Screenshot"
+                            style="max-width:100%; border-radius: 10px; margin-bottom: 15px;">
+                        <p>
+                            Say goodbye to manual tracking and messy spreadsheets. SmS V03 is here to revolutionize the
+                            way
+                            you manage your business operations — faster, smarter, and more efficiently!
 
-                    </p>
-                    <ul style="padding-left: 20px; margin-top: 10px;">
-                        <li><strong>✅ Real-Time Sales Tracking:</strong> Stay updated on every transaction as it happens
-                        </li>
-                        <li><strong>✅ Comprehensive Sales Reports:</strong> Make data-driven decisions with detailed
-                            insights.</li>
-                        <li><strong>✅ Invoice Generation & Management:</strong> Create, print, and search invoices with
-                            ease.</li>
-                        <li><strong>✅ Delivery Status Updates:</strong> Keep customers informed with order tracking.
-                        </li>
-                        <li><strong>✅ User Role Management:</strong> Assign permissions and control access securely.
-                        </li>
-                        <li><strong>✅ Smart Search & Print Tools:</strong> Instantly locate and print any invoice.</li>
-                    </ul>
-                    <p style="margin-top: 15px;">
-                        Take control of your business today with V03 – built for simplicity, powered by Anything4You +
-                        nkanishka.lk.
-                    </p>
-                    <a href="https://sales.nkanishka.lk/" target="_blank" class="modal-link">Visit Live Project</a>
+                        </p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li><strong>✅ Real-Time Sales Tracking:</strong> Stay updated on every transaction as it
+                                happens
+                            </li>
+                            <li><strong>✅ Comprehensive Sales Reports:</strong> Make data-driven decisions with detailed
+                                insights.</li>
+                            <li><strong>✅ Invoice Generation & Management:</strong> Create, print, and search invoices
+                                with
+                                ease.</li>
+                            <li><strong>✅ Delivery Status Updates:</strong> Keep customers informed with order tracking.
+                            </li>
+                            <li><strong>✅ User Role Management:</strong> Assign permissions and control access securely.
+                            </li>
+                            <li><strong>✅ Smart Search & Print Tools:</strong> Instantly locate and print any invoice.
+                            </li>
+                        </ul>
+                        <p style="margin-top: 15px;">
+                            Take control of your business today with V03 – built for simplicity, powered by Anything4You
+                            +
+                            nkanishka.lk.
+                        </p>
+                        <a href="https://sales.nkanishka.lk/" target="_blank" class="modal-link">Visit Live Project</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Modal end -->
-            <!--projects start-->
-            <div class="content-block project-card">
-                <img src="assets/microedge.png" alt="POS System" class="project-image">
-                <div class="project-info">
-                    <h2>MicroEdge Investment</h2>
-                    <span class="badge rounded-pill text-bg-warning">Latest</span>
-                    <span class="badge text-bg-success">Site is Live</span>
-                    <p>A full Invesment, Investor management system</p>
-                    <button class="view-more-btn" onclick="openModal('modal2')">View More</button>
+                <!-- Modal end -->
+                <!--projects start-->
+                <div class="content-block project-card">
+                    <img src="assets/microedge.png" alt="POS System" class="project-image">
+                    <div class="project-info">
+                        <h2>MicroEdge Investment</h2>
+                        <span class="badge rounded-pill text-bg-warning">Latest</span>
+                        <span class="badge text-bg-success">Site is Live</span>
+                        <p>A full Invesment, Investor management system</p>
+                        <button class="view-more-btn" onclick="openModal('modal2')">View More</button>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Modal -->
-            <div id="modal2" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal('modal2')">&times;</span>
-                    <h2>MicroEdge – Full Details</h2>
-                    <img src="assets/microedge.png" alt="POS Screenshot" style="max-width:100%; border-radius: 10px;">
-                    <p></p>
-                    <a href="https://microedge.nkanishka.lk/" target="_blank" class="modal-link">Visit Live Project</a>
+                <!-- Modal -->
+                <div id="modal2" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('modal2')">&times;</span>
+                        <h2>MicroEdge – Full Details</h2>
+                        <img src="assets/microedge.png" alt="POS Screenshot"
+                            style="max-width:100%; border-radius: 10px;">
+                        <p></p>
+                        <a href="https://microedge.nkanishka.lk/" target="_blank" class="modal-link">Visit Live
+                            Project</a>
+                    </div>
                 </div>
             </div>
             <!-- Modal end -->
             <!--Projects section end-->
-<hr>
+            
             <!--Featured section start-->
-            <div class="content-block">
-                <h1 class="fw-bold mb-4 projectH1">
-                    <i class="bi bi-pin-angle-fill text-danger me-2"></i>Featured
-                </h1>
+            <div class="card p-4 mb-4 border-0 shadow-none" draggable="false">
+                <div class="content-block">
+                    <h1 class="fw-bold mb-4 projectH1">
+                        <i class="bi bi-pin-angle-fill text-danger me-2"></i>Featured
+                    </h1>
 
-                <div class="card text-center shadow-lg">
-                    <div class="card-header bg-danger text-white">
-                        🚀 Website Updates
+                    <div class="card text-center shadow-lg">
+                        <div class="card-header bg-danger text-white">
+                            🚀 Website Updates
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Introducing NKANISHKA.LK new Update!</h5>
+                            <p class="card-text">
+                                We're excited to announce the launch of our newly redesigned website — built to provide
+                                you
+                                with a faster, easier, and more intuitive browsing experience. Explore our latest
+                                features,
+                                updated services, and a sleek modern look.
+                            </p>
+                            <a href="https://nkanishka.lk/" class="btn btn-outline-primary">
+                                nkanishka.lk
+                            </a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Launched 01/08/2025
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Introducing NKANISHKA.LK new Update!</h5>
-                        <p class="card-text">
-                            We're excited to announce the launch of our newly redesigned website — built to provide you
-                            with a faster, easier, and more intuitive browsing experience. Explore our latest features,
-                            updated services, and a sleek modern look.
-                        </p>
-                        <a href="https://nkanishka.lk/" class="btn btn-outline-primary">
-                            nkanishka.lk
-                        </a>
-                    </div>
-                    <div class="card-footer text-muted">
-                        Launched 01/08/2025
-                    </div>
+
                 </div>
-
             </div>
             <!--Featureds section end-->
 
 
 
             <!--services section start-->
-            <div class="content-block">
-                <h2 class="section-title mb-5">Services I Provide</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <i class="fas fa-paint-brush service-icon"></i>
-                        <h3 class="service-title">Graphic Design</h3>
-                        <p class="service-desc">
-                            Crafting unique and memorable visual identities through logos, branding materials, and
-                            marketing
-                            collateral. I focus on combining creativity with clarity to help your brand communicate
-                            effectively.
-                        </p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-code service-icon"></i>
-                        <h3 class="service-title">Web Development</h3>
-                        <p class="service-desc">
-                            Building fast, responsive, and user-friendly websites tailored to your business needs.
-                            Skilled in
-                            PHP, JavaScript, and modern frameworks, ensuring seamless functionality and great UX across
-                            devices.
-                        </p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-video service-icon"></i>
-                        <h3 class="service-title">Video Editing</h3>
-                        <p class="service-desc">
-                            Producing engaging videos with professional editing, effects, and motion graphics to elevate
-                            your
-                            brand's storytelling and marketing impact on all platforms.
-                        </p>
+            <div class="card p-4 mb-4 border-0 shadow-none" draggable="false">
+
+                <div class="content-block">
+                    <h2 class="section-title mb-5">Services I Provide</h2>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <i class="fas fa-paint-brush service-icon"></i>
+                            <h3 class="service-title">Graphic Design</h3>
+                            <p class="service-desc">
+                                Crafting unique and memorable visual identities through logos, branding materials, and
+                                marketing
+                                collateral. I focus on combining creativity with clarity to help your brand communicate
+                                effectively.
+                            </p>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-code service-icon"></i>
+                            <h3 class="service-title">Web Development</h3>
+                            <p class="service-desc">
+                                Building fast, responsive, and user-friendly websites tailored to your business needs.
+                                Skilled in
+                                PHP, JavaScript, and modern frameworks, ensuring seamless functionality and great UX
+                                across
+                                devices.
+                            </p>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-video service-icon"></i>
+                            <h3 class="service-title">Video Editing</h3>
+                            <p class="service-desc">
+                                Producing engaging videos with professional editing, effects, and motion graphics to
+                                elevate
+                                your
+                                brand's storytelling and marketing impact on all platforms.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-
             <!--services section end-->
 
 
 
             <!--card section start-->
-            <div class="card-group">
-                <div class="card">
-                    <img src="assets/grpheroimg.gif" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Creative Graphic Design Solutions</h5>
-                        <span class="badge text-bg-success">Graphic Desing</span>
-                        <p class="card-text">Specializing in logo creation, brand identity, posters, social media
-                            content, and marketing materials that make your brand stand out. I blend creativity with
-                            strategy to deliver visually compelling and impactful designs.</p>
-                        <span class="badge text-bg-warning">4 Packages are available</span>
-                        <p class="card-text"><small class="text-body-secondary">Last updated 01/08/2025</small></p>
+            <div class="card p-4 mb-4 border-0 shadow-none" draggable="false">
+
+                <div class="card-group">
+                    <div class="card">
+                        <img src="assets/grpheroimg.gif" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Creative Graphic Design Solutions</h5>
+                            <span class="badge text-bg-success">Graphic Desing</span>
+                            <p class="card-text">Specializing in logo creation, brand identity, posters, social media
+                                content, and marketing materials that make your brand stand out. I blend creativity with
+                                strategy to deliver visually compelling and impactful designs.</p>
+                            <span class="badge text-bg-warning">4 Packages are available</span>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 01/08/2025</small></p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="assets/web.gif" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Responsive Web Design Services</h5>
-                        <span class="badge text-bg-success">Web Desing</span>
-                        <p class="card-text">Designing modern, user-friendly, and fully responsive websites that deliver
-                            seamless experiences across all devices. From landing pages to full business websites, I
-                            focus on usability, performance, and clean UI.</p>
-                        <span class="badge text-bg-warning">Contact for more details</span>
-                        <p class="card-text"><small class="text-body-secondary">Last updated 01/08/2025</small></p>
+                    <div class="card">
+                        <img src="assets/web.gif" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Responsive Web Design Services</h5>
+                            <span class="badge text-bg-success">Web Desing</span>
+                            <p class="card-text">Designing modern, user-friendly, and fully responsive websites that
+                                deliver
+                                seamless experiences across all devices. From landing pages to full business websites, I
+                                focus on usability, performance, and clean UI.</p>
+                            <span class="badge text-bg-warning">Contact for more details</span>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 01/08/2025</small></p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="assets/social.gif" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Social Media Management</h5>
-                        <span class="badge text-bg-success">Social Media Management</span>
-                        <p class="card-text">Boost your brand's presence across all platforms with our expert social
-                            media management services.
-                            We handle content creation, post scheduling, audience engagement, and analytics to grow your
-                            online community effectively.</p>
-                        <span class="badge text-bg-warning">All social media accounts</span>
-                        <p class="card-text"><small class="text-body-secondary">Last updated 01/08/2025</small></p>
+                    <div class="card">
+                        <img src="assets/social.gif" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Social Media Management</h5>
+                            <span class="badge text-bg-success">Social Media Management</span>
+                            <p class="card-text">Boost your brand's presence across all platforms with our expert social
+                                media management services.
+                                We handle content creation, post scheduling, audience engagement, and analytics to grow
+                                your
+                                online community effectively.</p>
+                            <span class="badge text-bg-warning">All social media accounts</span>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 01/08/2025</small></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -596,63 +644,73 @@
 
 
             <!--Accordion section start-->
-            <div class="content-block Accordion">
-                <h1 class="fw-bold mb-4 projectH1">
-                    <i class="bi bi-award-fill me-2 text-warning"></i>Educations and My Career
-                </h1>
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Accordion Item #1
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>This is the first item’s accordion body.</strong> It is shown by default, until
-                                the collapse plugin adds the appropriate classes that we use to style each element.
-                                These classes control the overall appearance, as well as the showing and hiding via CSS
-                                transitions. You can modify any of this with custom CSS or overriding our default
-                                variables. It’s also worth noting that just about any HTML can go within the
-                                <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="card p-4 mb-4 border-0 shadow-none" draggable="false">
+
+                <div class="content-block Accordion">
+                    <h1 class="fw-bold mb-4 projectH1">
+                        <i class="bi bi-award-fill me-2 text-warning"></i>Educations and My Career
+                    </h1>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Accordion Item #1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item’s accordion body.</strong> It is shown by default,
+                                    until
+                                    the collapse plugin adds the appropriate classes that we use to style each element.
+                                    These classes control the overall appearance, as well as the showing and hiding via
+                                    CSS
+                                    transitions. You can modify any of this with custom CSS or overriding our default
+                                    variables. It’s also worth noting that just about any HTML can go within the
+                                    <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Accordion Item #2
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>This is the second item’s accordion body.</strong> It is hidden by default,
-                                until the collapse plugin adds the appropriate classes that we use to style each
-                                element. These classes control the overall appearance, as well as the showing and hiding
-                                via CSS transitions. You can modify any of this with custom CSS or overriding our
-                                default variables. It’s also worth noting that just about any HTML can go within the
-                                <code>.accordion-body</code>, though the transition does limit overflow.
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Accordion Item #2
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item’s accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding
+                                    via CSS transitions. You can modify any of this with custom CSS or overriding our
+                                    default variables. It’s also worth noting that just about any HTML can go within the
+                                    <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Accordion Item #3
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>This is the third item’s accordion body.</strong> It is hidden by default, until
-                                the collapse plugin adds the appropriate classes that we use to style each element.
-                                These classes control the overall appearance, as well as the showing and hiding via CSS
-                                transitions. You can modify any of this with custom CSS or overriding our default
-                                variables. It’s also worth noting that just about any HTML can go within the
-                                <code>.accordion-body</code>, though the transition does limit overflow.
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Accordion Item #3
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item’s accordion body.</strong> It is hidden by default,
+                                    until
+                                    the collapse plugin adds the appropriate classes that we use to style each element.
+                                    These classes control the overall appearance, as well as the showing and hiding via
+                                    CSS
+                                    transitions. You can modify any of this with custom CSS or overriding our default
+                                    variables. It’s also worth noting that just about any HTML can go within the
+                                    <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -661,18 +719,21 @@
             <!--Accordion section end-->
 
             <!--image section start-->
-            <div class="content-block">
-                <h1 class="fw-bold mb-4 projectH1">
-                    <i class="bi bi-award-fill me-2 text-warning"></i>All Projects
-                </h1>
-                <div class="card text-bg-dark">
-                    <img src="assets/vecteezy_a-group-of-people-with-backpacks-pointing-at-something_56040346.jpeg"
-                        class="card-img" alt="...">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+            <div class="card p-4 mb-4 border-0 shadow-none" draggable="false">
+
+                <div class="content-block">
+                    <h1 class="fw-bold mb-4 projectH1">
+                        <i class="bi bi-award-fill me-2 text-warning"></i>All Projects
+                    </h1>
+                    <div class="card text-bg-dark">
+                        <img src="assets/vecteezy_a-group-of-people-with-backpacks-pointing-at-something_56040346.jpeg"
+                            class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -680,114 +741,124 @@
 
 
             <!--Project link section start-->
+            <div class="card p-4 mb-4 border-0 shadow-none" draggable="false">
 
-            <div class="content-block projectLink">
+                <div class="content-block projectLink">
 
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/vecteezy_a-group-of-people-with-backpacks-pointing-at-something_56040346.jpeg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card’s content.</p>
+                    <div class="card" style="width: 18rem;">
+                        <img src="assets/vecteezy_a-group-of-people-with-backpacks-pointing-at-something_56040346.jpeg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card’s content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                    <div class="card" style="width: 18rem;">
+                        <img src="assets/vecteezy_a-group-of-people-with-backpacks-pointing-at-something_56040346.jpeg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card’s content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
                     </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/vecteezy_a-group-of-people-with-backpacks-pointing-at-something_56040346.jpeg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card’s content.</p>
+                    <div class="card" style="width: 18rem;">
+                        <img src="assets/vecteezy_a-group-of-people-with-backpacks-pointing-at-something_56040346.jpeg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card’s content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/vecteezy_a-group-of-people-with-backpacks-pointing-at-something_56040346.jpeg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card’s content.</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/vecteezy_a-group-of-people-with-backpacks-pointing-at-something_56040346.jpeg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card’s content.</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                    <div class="card" style="width: 18rem;">
+                        <img src="assets/vecteezy_a-group-of-people-with-backpacks-pointing-at-something_56040346.jpeg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card’s content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
                     </div>
                 </div>
             </div>
             <!--Project link section start-->
 
             <!--blog start-->
-            <div class="content-block">
-                <h1 class="fw-bold mb-4 projectH1">
-                    <i class="bi bi-award-fill me-2 text-warning"></i>Blog
-                </h1>
+            <div class="card p-4 mb-4 border-0 shadow-none" draggable="false">
 
-                <div class="card mb-3">
-                    <img src="assets/vecteezy_a-group-of-people-with-backpacks-pointing-at-something_56040346.jpeg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            This is a wider card with supporting text below as a natural lead-in to additional content.
-                        </p>
-                        <p class="card-text">
-                            <small class="text-body-secondary">Last updated 3 mins ago</small>
-                        </p>
+                <div class="content-block">
+                    <h1 class="fw-bold mb-4 projectH1">
+                        <i class="bi bi-award-fill me-2 text-warning"></i>Blog
+                    </h1>
 
-                        <!-- Your styled button -->
-                        <button type="button" class="btn btn-primary position-relative">
-                            Blog posts
-                            <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                99+
-                                <span class="visually-hidden">unread messages</span>
-                            </span>
-                        </button>
+                    <div class="card mb-3">
+                        <img src="assets/vecteezy_a-group-of-people-with-backpacks-pointing-at-something_56040346.jpeg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">
+                                This is a wider card with supporting text below as a natural lead-in to additional
+                                content.
+                            </p>
+                            <p class="card-text">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </p>
+
+                            <!-- Your styled button -->
+                            <button type="button" class="btn btn-primary position-relative">
+                                Blog posts
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    99+
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </button>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
             <!--blog end-->
 
@@ -825,6 +896,101 @@
             });
         }
     </script>
+    <script>
+        const containerWrapper = document.getElementById('containerWrapper');
+        const toggleEditBtn = document.getElementById('toggleEditBtn');
+        let editMode = false;
+
+        // Enable or disable drag
+        function setDraggable(enabled) {
+            [...containerWrapper.children].forEach(child => {
+                child.draggable = enabled;
+                if (enabled) {
+                    child.classList.add("draggable");
+                } else {
+                    child.classList.remove("draggable");
+                }
+            });
+        }
+
+        // Toggle edit mode
+        toggleEditBtn.addEventListener('click', () => {
+            editMode = !editMode;
+            toggleEditBtn.textContent = editMode ? 'Disable Edit Mode & Save' : 'Enable Edit Mode';
+            setDraggable(editMode);
+            if (!editMode) {
+                saveLayout();
+            }
+        });
+
+        // Drag and Drop Logic
+        let draggedItem = null;
+
+        containerWrapper.addEventListener('dragstart', (e) => {
+            if (!editMode) return;
+            draggedItem = e.target.closest('.card');
+            if (draggedItem) {
+                e.dataTransfer.effectAllowed = "move";
+                draggedItem.classList.add('opacity-50');
+            }
+        });
+
+        containerWrapper.addEventListener('dragend', (e) => {
+            if (!editMode) return;
+            draggedItem?.classList.remove('opacity-50');
+            draggedItem = null;
+        });
+
+        containerWrapper.addEventListener('dragover', (e) => {
+            if (!editMode) return;
+            e.preventDefault();
+            const target = e.target.closest('.card');
+            if (target && draggedItem && target !== draggedItem) {
+                const bounding = target.getBoundingClientRect();
+                const offset = bounding.y + bounding.height / 2;
+                if (e.clientY > offset) {
+                    target.parentNode.insertBefore(draggedItem, target.nextSibling);
+                } else {
+                    target.parentNode.insertBefore(draggedItem, target);
+                }
+            }
+        });
+
+        // Save layout to localStorage
+        function saveLayout() {
+            const layout = [...containerWrapper.children].map(div => div.outerHTML);
+            localStorage.setItem("userLayout", JSON.stringify(layout));
+        }
+
+        // Load layout if available
+        window.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem("userLayout");
+            if (saved) {
+                try {
+                    const layout = JSON.parse(saved);
+                    if (Array.isArray(layout)) {
+                        containerWrapper.innerHTML = '';
+                        layout.forEach(html => {
+                            const temp = document.createElement('div');
+                            temp.innerHTML = html;
+                            const element = temp.firstElementChild;
+                            if (element) containerWrapper.appendChild(element);
+                        });
+                    }
+                } catch (e) {
+                    console.warn("Invalid layout data. Resetting layout.");
+                    localStorage.removeItem("userLayout");
+                }
+            }
+        });
+
+        // Optional: Add this to a button to reset layout
+        function resetLayout() {
+            localStorage.removeItem("userLayout");
+            location.reload();
+        }
+    </script>
+
 
 </body>
 
